@@ -24,15 +24,15 @@ namespace Statia
 
         internal class Client
         {
-            static int nextCode = 0;
+            private static int nextCode = 0;
 
             public int Code { get; set; }
             public FullName Name { get; set; }
             public string Adress { get; set; }
-            public string phone;
             public int OrdersCount { get; set; }
             public decimal TotalPurchaseAmount { get; set; }
-
+            
+            private string phone;
             public string Phone
             {
                 get { return phone; }
