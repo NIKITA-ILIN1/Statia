@@ -49,15 +49,11 @@ namespace Statia
                 }
             }
 
-            public Client(FullName iname, string iadress, string iphone)
+            public Client()
             {
                 nextCode++;
                 this.Code = nextCode;
-                this.Name = iname;
-                this.Adress= iadress;
-                this.Phone = iphone;
-                this.OrdersCount = 0;
-                this.TotalPurchaseAmount = 0;
+
             }
 
             public void PrintClient()
@@ -77,27 +73,36 @@ namespace Statia
             p1.PrintArticle();
             Console.WriteLine();
 
-            Client c1 = new Client(
-                new FullName()
+            Client c1 = new Client
+            {
+                Name = new FullName()
                 {
                     Surname = "Ilyin",
                     Name = "Nikita",
                     Patronymic = "Vladimirovich"
                 },
-                "Байконур 1",
-                " flm7(906)5063132");
-            c1.PrintClient();
-            Console.WriteLine();
-            Console.WriteLine(c1.Name.Name); 
-
-            FullName fullName2 = new FullName()
-            {
-                Surname = "Ilyina",
-                Name = "Anna",
-                Patronymic = "Nikolaevna"
+                Adress = "Байконур 1",
+                Phone = " flm7(906)5063132"
             };
 
-            Client c2 = new Client(fullName2, "Байконур 11", " flm7(909)251 5669");
+            c1.PrintClient();
+
+            Console.WriteLine();
+
+            Console.WriteLine(c1.Name.Name); 
+
+            Client c2 = new Client
+            {
+                Name = new FullName()
+                {
+                    Surname = "Ilyina",
+                    Name = "Anna",
+                    Patronymic = "Nikolaevna"
+                },
+                Adress = "Байконур 11",
+                Phone = " flm7(909)251 5669"
+            };
+
             c2.PrintClient();
             Console.WriteLine();
         }
