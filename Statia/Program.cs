@@ -26,12 +26,12 @@ namespace Statia
         {
             static int nextCode = 0;
 
-            int Code { get; set; }
-            FullName Name { get; set; }
-            string Adress { get; set; }
-            string phone;
-            int OrdersCount { get; set; }
-            decimal TotalPurchaseAmount { get; set; }
+            public int Code { get; set; }
+            public FullName Name { get; set; }
+            public string Adress { get; set; }
+            public string phone;
+            public int OrdersCount { get; set; }
+            public decimal TotalPurchaseAmount { get; set; }
 
             public string Phone
             {
@@ -77,16 +77,18 @@ namespace Statia
             p1.PrintArticle();
             Console.WriteLine();
 
-            FullName fullName = new FullName()
-            {
-                Surname = "Ilyin",
-                Name = "Nikita",
-                Patronymic = "Vladimirovich"
-            }; 
-
-            Client c1 = new Client(fullName, "Байконур 1", " flm7(906)5063132");
+            Client c1 = new Client(
+                new FullName()
+                {
+                    Surname = "Ilyin",
+                    Name = "Nikita",
+                    Patronymic = "Vladimirovich"
+                },
+                "Байконур 1",
+                " flm7(906)5063132");
             c1.PrintClient();
             Console.WriteLine();
+            Console.WriteLine(c1.Name.Name); 
 
             FullName fullName2 = new FullName()
             {
